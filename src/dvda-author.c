@@ -58,6 +58,7 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 static char *LPLEXTEMPDIR;
 char *TEMPDIR;
 
+#if USE_LEXER
 command_t *lexer_analysis(command_t *command, lexer_t *lexer, const char *config_file, bool config_type, globalData *globals)
 {
   int i;
@@ -91,6 +92,7 @@ command_t *lexer_analysis(command_t *command, lexer_t *lexer, const char *config
 
     return command;
 }
+#endif
 
 static inline void allocate_paths(char **s, const char *dir, unsigned long length, globalData *globals)
 {
@@ -370,6 +372,7 @@ int main(int argc,  char *const argv[])
   command0.img = &img0;
   command = &command0;
 
+#if USE_LEXER
   for (i = 1; i < argc ; i++)
     if (strcmp(argv[i], "--disable-lexer") == 0 || strcmp(argv[i], "-W") == 0 || strcmp(argv[i], "--version") == 0 || strcmp(argv[i], "--help") == 0 || strcmp(argv[i], "-v") == 0 || strcmp(argv[i], "-h") == 0)
       {
@@ -402,14 +405,19 @@ int main(int argc,  char *const argv[])
 
   /* launch core processes after parsing user command-line, possibly overriding defaut values */
 
-
+#else
+    globals.enable_lexer = 0;
+    goto launch;
+#endif
+    
 launch:
 
+#if USE_LEXER
   if (project_flag)
 
     launch_manager(lexer_analysis(command, lexer, project_filepath, PROJECT_FILE, &globals), &globals);
   else
-
+#endif
     launch_manager(command_line_parsing(argc, argv, command, &globals), &globals);
 
   // allocated in command_line_parsing()

@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		52684A332C32990E0078794F /* dvda-author.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A262C3298D80078794F /* dvda-author.c */; };
 		52684A442C329A3F0078794F /* libc_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A3F2C329A2D0078794F /* libc_utils.c */; };
+		52684A472C329D130078794F /* auxiliary.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A242C3298D80078794F /* auxiliary.c */; };
+		52684A482C329D600078794F /* command_line_parsing.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A252C3298D80078794F /* command_line_parsing.c */; };
+		52684A492C329E5C0078794F /* audio.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A232C3298D80078794F /* audio.c */; };
+		52684A662C32A0410078794F /* manager.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A592C32A0150078794F /* manager.c */; };
+		52684A672C32A0550078794F /* checkData.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A552C32A0150078794F /* checkData.c */; };
+		52684A692C32A0600078794F /* readHeader.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A5A2C32A0150078794F /* readHeader.c */; };
+		52684A6A2C32A0650078794F /* repair.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A5B2C32A0150078794F /* repair.c */; };
+		52684A6B2C32A0740078794F /* checkParameters.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A562C32A0150078794F /* checkParameters.c */; };
+		52684A6C2C32A0B00078794F /* fixwav_auxiliary.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A572C32A0150078794F /* fixwav_auxiliary.c */; };
+		52684A6D2C32A0C60078794F /* file_input_parsing.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A272C3298D80078794F /* file_input_parsing.c */; };
+		52684A6E2C32A0D90078794F /* winport.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A412C329A2D0078794F /* winport.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -80,6 +91,21 @@
 		52684A3D2C329A2D0078794F /* private_c_utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = private_c_utils.h; sourceTree = "<group>"; };
 		52684A3F2C329A2D0078794F /* libc_utils.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = libc_utils.c; sourceTree = "<group>"; };
 		52684A412C329A2D0078794F /* winport.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = winport.c; sourceTree = "<group>"; };
+		52684A4B2C32A0150078794F /* audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = audio.h; sourceTree = "<group>"; };
+		52684A4C2C32A0150078794F /* checkData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = checkData.h; sourceTree = "<group>"; };
+		52684A4D2C32A0150078794F /* checkParameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = checkParameters.h; sourceTree = "<group>"; };
+		52684A4E2C32A0150078794F /* fixwav_auxiliary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fixwav_auxiliary.h; sourceTree = "<group>"; };
+		52684A4F2C32A0150078794F /* fixwav_manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fixwav_manager.h; sourceTree = "<group>"; };
+		52684A502C32A0150078794F /* fixwav.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fixwav.h; sourceTree = "<group>"; };
+		52684A512C32A0150078794F /* launch_fixwav.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = launch_fixwav.h; sourceTree = "<group>"; };
+		52684A522C32A0150078794F /* readHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = readHeader.h; sourceTree = "<group>"; };
+		52684A532C32A0150078794F /* repair.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = repair.h; sourceTree = "<group>"; };
+		52684A552C32A0150078794F /* checkData.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = checkData.c; sourceTree = "<group>"; };
+		52684A562C32A0150078794F /* checkParameters.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = checkParameters.c; sourceTree = "<group>"; };
+		52684A572C32A0150078794F /* fixwav_auxiliary.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fixwav_auxiliary.c; sourceTree = "<group>"; };
+		52684A592C32A0150078794F /* manager.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = manager.c; sourceTree = "<group>"; };
+		52684A5A2C32A0150078794F /* readHeader.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = readHeader.c; sourceTree = "<group>"; };
+		52684A5B2C32A0150078794F /* repair.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = repair.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +122,7 @@
 		526849F02C3298A20078794F = {
 			isa = PBXGroup;
 			children = (
+				52684A652C32A0150078794F /* libfixwav */,
 				52684A432C329A2D0078794F /* libutils */,
 				52684A322C3298D80078794F /* src */,
 				526849FA2C3298A20078794F /* Products */,
@@ -211,6 +238,44 @@
 			path = libutils;
 			sourceTree = "<group>";
 		};
+		52684A542C32A0150078794F /* include */ = {
+			isa = PBXGroup;
+			children = (
+				52684A4B2C32A0150078794F /* audio.h */,
+				52684A4C2C32A0150078794F /* checkData.h */,
+				52684A4D2C32A0150078794F /* checkParameters.h */,
+				52684A4E2C32A0150078794F /* fixwav_auxiliary.h */,
+				52684A4F2C32A0150078794F /* fixwav_manager.h */,
+				52684A502C32A0150078794F /* fixwav.h */,
+				52684A512C32A0150078794F /* launch_fixwav.h */,
+				52684A522C32A0150078794F /* readHeader.h */,
+				52684A532C32A0150078794F /* repair.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		52684A5C2C32A0150078794F /* src */ = {
+			isa = PBXGroup;
+			children = (
+				52684A542C32A0150078794F /* include */,
+				52684A552C32A0150078794F /* checkData.c */,
+				52684A562C32A0150078794F /* checkParameters.c */,
+				52684A572C32A0150078794F /* fixwav_auxiliary.c */,
+				52684A592C32A0150078794F /* manager.c */,
+				52684A5A2C32A0150078794F /* readHeader.c */,
+				52684A5B2C32A0150078794F /* repair.c */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		52684A652C32A0150078794F /* libfixwav */ = {
+			isa = PBXGroup;
+			children = (
+				52684A5C2C32A0150078794F /* src */,
+			);
+			path = libfixwav;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -268,8 +333,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52684A6B2C32A0740078794F /* checkParameters.c in Sources */,
+				52684A6E2C32A0D90078794F /* winport.c in Sources */,
+				52684A482C329D600078794F /* command_line_parsing.c in Sources */,
 				52684A332C32990E0078794F /* dvda-author.c in Sources */,
+				52684A6A2C32A0650078794F /* repair.c in Sources */,
+				52684A692C32A0600078794F /* readHeader.c in Sources */,
+				52684A6C2C32A0B00078794F /* fixwav_auxiliary.c in Sources */,
+				52684A672C32A0550078794F /* checkData.c in Sources */,
+				52684A472C329D130078794F /* auxiliary.c in Sources */,
+				52684A662C32A0410078794F /* manager.c in Sources */,
+				52684A492C329E5C0078794F /* audio.c in Sources */,
 				52684A442C329A3F0078794F /* libc_utils.c in Sources */,
+				52684A6D2C32A0C60078794F /* file_input_parsing.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,8 +475,15 @@
 					"\"$(SRCROOT)/flac-1.3.4/include/FLAC\"",
 					"\"$(SRCROOT)/libutils/src/include\"",
 					"\"$(SRCROOT)/libfixwav/src/include\"",
+					"\"$(SRCROOT)/ffmpeg-4.2.4\"",
 				);
-				OTHER_CFLAGS = "-DWITHOUT_sox";
+				OTHER_CFLAGS = (
+					"-DWITHOUT_sox",
+					"-DWITHOUT_lplex",
+					"-DWITHOUT_FLAC",
+					"-DHAVE_core_BUILD=1",
+					"-DLONG_OPTIONS=1",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -413,8 +496,15 @@
 					"\"$(SRCROOT)/flac-1.3.4/include/FLAC\"",
 					"\"$(SRCROOT)/libutils/src/include\"",
 					"\"$(SRCROOT)/libfixwav/src/include\"",
+					"\"$(SRCROOT)/ffmpeg-4.2.4\"",
 				);
-				OTHER_CFLAGS = "-DWITHOUT_sox";
+				OTHER_CFLAGS = (
+					"-DWITHOUT_sox",
+					"-DWITHOUT_lplex",
+					"-DWITHOUT_FLAC",
+					"-DHAVE_core_BUILD=1",
+					"-DLONG_OPTIONS=1",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

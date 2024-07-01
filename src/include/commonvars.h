@@ -30,6 +30,12 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #include "config.h"
 #endif
 
+/// Config for Xcode version
+
+#define USE_LEXER 0
+
+///
+
 #ifndef START_MLP_BYTESHIFT
 #define START_MLP_BYTESHIFT 23
 #endif

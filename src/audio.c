@@ -34,6 +34,8 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #include "audio2.h"
 #include "mlp.h"
 
+int audio_close_merged(fileinfo_t *info, globalData *globals);
+
 static const uint8_t default_cga[6] = {0,  1,  7,  3,   9,   12};  //default channel assignment
 static uint32_t cga2wav_channels[21] = {0x4, 0x3, 0x103, 0x33, 0xB, 0x10B, 0x3B, 0x7, 0x107, 0x37, 0xF, 0x10F, 0x3F, 0x107, 0x37, 0xF, 0x10F, 0x3F, 0x3B, 0x37, 0x3B };
 
@@ -580,7 +582,9 @@ int calc_info(fileinfo_t *info, globalData *globals)
     {
       foutput(INF "Searching MLP layout for file %s. Please wait...\n", info->filename);
 
-      int res = decode_mlp_file(info, globals);
+//      int res = decode_mlp_file(info, globals);
+        int res = 1;
+        fprintf(stderr, "%s\n", ERR "TODO: macOS");
 
       if (res)
         {
@@ -2170,7 +2174,7 @@ out:
 
 int audio_close(fileinfo_t *info, globalData *globals)
 {
-  if (info->mergeflag) return audio_close_merged(info);
+  if (info->mergeflag) return audio_close_merged(info, globals);
 
   if (globals->debugging) foutput("%s %s\n", INF "Closing audio file", info->filename);
   if (info->type == AFMT_WAVE)
