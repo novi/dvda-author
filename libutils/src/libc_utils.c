@@ -169,7 +169,7 @@ return (char*) Buffer;
     if (r)
         return (cwd);
     perror("Allocate current path");
-    clean_exit(-1);
+    exit(-1);
 
 #endif
 return "";
