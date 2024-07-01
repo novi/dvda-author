@@ -213,8 +213,14 @@ int launch_manager(command_t *command, globalData *globals)
   for (int i = 0; i < naudio_groups ; ++i)
     for (int j = 0; j < nfiles[i]; ++j)
       {
-          if (globals->to_mlp) /*encode_mlp_file(&files[i][j], globals);*/ fprintf(stderr, "%s\n", ERR "TODO: macOS");
-          if (globals->encode_to_mlp_dvd) /*transport_to_mlp(&files[i][j], globals);*/ fprintf(stderr, "%s\n", ERR "TODO: macOS");
+          if (globals->to_mlp) /*encode_mlp_file(&files[i][j], globals);*/ {
+              fprintf(stderr, "%s\n", ERR "TODO: macOS");
+              clean_exit(-1, globals);
+          }
+          if (globals->encode_to_mlp_dvd) /*transport_to_mlp(&files[i][j], globals);*/ {
+              fprintf(stderr, "%s\n", ERR "TODO: macOS");
+              clean_exit(-1, globals);
+          }
       }
 
   foutput("\n%s", "DVD MLP Layout\n");
