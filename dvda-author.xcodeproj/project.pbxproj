@@ -20,6 +20,11 @@
 		52684A6C2C32A0B00078794F /* fixwav_auxiliary.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A572C32A0150078794F /* fixwav_auxiliary.c */; };
 		52684A6D2C32A0C60078794F /* file_input_parsing.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A272C3298D80078794F /* file_input_parsing.c */; };
 		52684A6E2C32A0D90078794F /* winport.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A412C329A2D0078794F /* winport.c */; };
+		52684A6F2C32B22E0078794F /* launch_manager.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A282C3298D80078794F /* launch_manager.c */; };
+		52684A702C32B3230078794F /* amg2.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A1E2C3298D80078794F /* amg2.c */; };
+		52684A712C32B33D0078794F /* samg2.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A2E2C3298D80078794F /* samg2.c */; };
+		52684A722C32B3520078794F /* ats.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A202C3298D80078794F /* ats.c */; };
+		52684A732C32B3650078794F /* atsi2.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A222C3298D80078794F /* atsi2.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -333,6 +338,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52684A722C32B3520078794F /* ats.c in Sources */,
+				52684A702C32B3230078794F /* amg2.c in Sources */,
+				52684A6F2C32B22E0078794F /* launch_manager.c in Sources */,
+				52684A732C32B3650078794F /* atsi2.c in Sources */,
+				52684A712C32B33D0078794F /* samg2.c in Sources */,
 				52684A6B2C32A0740078794F /* checkParameters.c in Sources */,
 				52684A6E2C32A0D90078794F /* winport.c in Sources */,
 				52684A482C329D600078794F /* command_line_parsing.c in Sources */,
