@@ -12,6 +12,8 @@
 		5252D6FD2C4E6CA90027F260 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5252D6FC2C4E6CA90027F260 /* Assets.xcassets */; };
 		5252D7002C4E6CA90027F260 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5252D6FF2C4E6CA90027F260 /* Preview Assets.xcassets */; };
 		5252D70B2C4E6CAA0027F260 /* dvda_author_macTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5252D70A2C4E6CAA0027F260 /* dvda_author_macTests.swift */; };
+		5252D7242C4E6DD30027F260 /* libdvda-author-lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52684AA82C33D9C00078794F /* libdvda-author-lib.a */; };
+		5252D7272C4E70B90027F260 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5252D7262C4E70B90027F260 /* Author.swift */; };
 		52684A332C32990E0078794F /* dvda-author.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A262C3298D80078794F /* dvda-author.c */; };
 		52684A442C329A3F0078794F /* libc_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A3F2C329A2D0078794F /* libc_utils.c */; };
 		52684A472C329D130078794F /* auxiliary.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A242C3298D80078794F /* auxiliary.c */; };
@@ -55,6 +57,13 @@
 			remoteGlobalIDString = 5252D6F52C4E6CA80027F260;
 			remoteInfo = "dvda-author-mac";
 		};
+		5252D7212C4E6DCE0027F260 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 526849F12C3298A20078794F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52684AA72C33D9C00078794F;
+			remoteInfo = "dvda-author-lib";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -78,6 +87,8 @@
 		5252D7012C4E6CA90027F260 /* dvda_author_mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = dvda_author_mac.entitlements; sourceTree = "<group>"; };
 		5252D7062C4E6CAA0027F260 /* dvda-author-macTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "dvda-author-macTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5252D70A2C4E6CAA0027F260 /* dvda_author_macTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dvda_author_macTests.swift; sourceTree = "<group>"; };
+		5252D7252C4E6EC20027F260 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		5252D7262C4E70B90027F260 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		526849F92C3298A20078794F /* dvda-author */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "dvda-author"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52684A032C3298D80078794F /* amg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = amg.h; sourceTree = "<group>"; };
 		52684A042C3298D80078794F /* asvs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = asvs.h; sourceTree = "<group>"; };
@@ -157,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5252D7242C4E6DD30027F260 /* libdvda-author-lib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,11 +199,13 @@
 		5252D6F72C4E6CA80027F260 /* dvda-author-mac */ = {
 			isa = PBXGroup;
 			children = (
+				5252D7252C4E6EC20027F260 /* BridgingHeader.h */,
 				5252D6F82C4E6CA80027F260 /* dvda_author_macApp.swift */,
 				5252D6FA2C4E6CA80027F260 /* ContentView.swift */,
 				5252D6FC2C4E6CA90027F260 /* Assets.xcassets */,
 				5252D7012C4E6CA90027F260 /* dvda_author_mac.entitlements */,
 				5252D6FE2C4E6CA90027F260 /* Preview Content */,
+				5252D7262C4E70B90027F260 /* Author.swift */,
 			);
 			path = "dvda-author-mac";
 			sourceTree = "<group>";
@@ -212,6 +226,13 @@
 			path = "dvda-author-macTests";
 			sourceTree = "<group>";
 		};
+		5252D7232C4E6DD30027F260 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		526849F02C3298A20078794F = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +242,7 @@
 				5252D6F72C4E6CA80027F260 /* dvda-author-mac */,
 				5252D7092C4E6CAA0027F260 /* dvda-author-macTests */,
 				526849FA2C3298A20078794F /* Products */,
+				5252D7232C4E6DD30027F260 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -398,6 +420,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5252D7222C4E6DCE0027F260 /* PBXTargetDependency */,
 			);
 			name = "dvda-author-mac";
 			productName = "dvda-author-mac";
@@ -526,6 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5252D7272C4E70B90027F260 /* Author.swift in Sources */,
 				5252D6FB2C4E6CA80027F260 /* ContentView.swift in Sources */,
 				5252D6F92C4E6CA80027F260 /* dvda_author_macApp.swift in Sources */,
 			);
@@ -594,6 +618,11 @@
 			target = 5252D6F52C4E6CA80027F260 /* dvda-author-mac */;
 			targetProxy = 5252D7072C4E6CAA0027F260 /* PBXContainerItemProxy */;
 		};
+		5252D7222C4E6DCE0027F260 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52684AA72C33D9C00078794F /* dvda-author-lib */;
+			targetProxy = 5252D7212C4E6DCE0027F260 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -621,6 +650,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "dvda-author-mac/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -650,6 +680,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "dvda-author-mac/BridgingHeader.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -865,6 +896,7 @@
 					"-DWITHOUT_lplex",
 					"-DWITHOUT_FLAC",
 					"-DHAVE_core_BUILD=1",
+					"-DNO_ANSI_COLORS=1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -882,6 +914,7 @@
 					"-DWITHOUT_lplex",
 					"-DWITHOUT_FLAC",
 					"-DHAVE_core_BUILD=1",
+					"-DNO_ANSI_COLORS=1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
