@@ -25,6 +25,21 @@
 		52684A712C32B33D0078794F /* samg2.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A2E2C3298D80078794F /* samg2.c */; };
 		52684A722C32B3520078794F /* ats.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A202C3298D80078794F /* ats.c */; };
 		52684A732C32B3650078794F /* atsi2.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A222C3298D80078794F /* atsi2.c */; };
+		52684AAC2C33D9E80078794F /* ats.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A202C3298D80078794F /* ats.c */; };
+		52684AAD2C33D9EA0078794F /* amg2.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A1E2C3298D80078794F /* amg2.c */; };
+		52684AAF2C33D9F50078794F /* atsi2.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A222C3298D80078794F /* atsi2.c */; };
+		52684AB02C33D9F80078794F /* audio.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A232C3298D80078794F /* audio.c */; };
+		52684AB12C33D9FA0078794F /* auxiliary.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A242C3298D80078794F /* auxiliary.c */; };
+		52684AB22C33DA020078794F /* file_input_parsing.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A272C3298D80078794F /* file_input_parsing.c */; };
+		52684AB42C33DA0D0078794F /* samg2.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A2E2C3298D80078794F /* samg2.c */; };
+		52684AB52C33DA180078794F /* libc_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A3F2C329A2D0078794F /* libc_utils.c */; };
+		52684AB62C33DA1A0078794F /* winport.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A412C329A2D0078794F /* winport.c */; };
+		52684AB72C33DA1F0078794F /* checkData.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A552C32A0150078794F /* checkData.c */; };
+		52684AB82C33DA210078794F /* checkParameters.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A562C32A0150078794F /* checkParameters.c */; };
+		52684AB92C33DA240078794F /* fixwav_auxiliary.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A572C32A0150078794F /* fixwav_auxiliary.c */; };
+		52684ABA2C33DA260078794F /* manager.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A592C32A0150078794F /* manager.c */; };
+		52684ABB2C33DA280078794F /* readHeader.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A5A2C32A0150078794F /* readHeader.c */; };
+		52684ABC2C33DA2A0078794F /* repair.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A5B2C32A0150078794F /* repair.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -111,10 +126,18 @@
 		52684A592C32A0150078794F /* manager.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = manager.c; sourceTree = "<group>"; };
 		52684A5A2C32A0150078794F /* readHeader.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = readHeader.c; sourceTree = "<group>"; };
 		52684A5B2C32A0150078794F /* repair.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = repair.c; sourceTree = "<group>"; };
+		52684AA82C33D9C00078794F /* libdvda-author-lib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libdvda-author-lib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		526849F62C3298A20078794F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52684AA62C33D9C00078794F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				526849F92C3298A20078794F /* dvda-author */,
+				52684AA82C33D9C00078794F /* libdvda-author-lib.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -283,6 +307,16 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		52684AA42C33D9C00078794F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		526849F82C3298A20078794F /* dvda-author */ = {
 			isa = PBXNativeTarget;
@@ -301,6 +335,23 @@
 			productReference = 526849F92C3298A20078794F /* dvda-author */;
 			productType = "com.apple.product-type.tool";
 		};
+		52684AA72C33D9C00078794F /* dvda-author-lib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52684AAB2C33D9C00078794F /* Build configuration list for PBXNativeTarget "dvda-author-lib" */;
+			buildPhases = (
+				52684AA42C33D9C00078794F /* Headers */,
+				52684AA52C33D9C00078794F /* Sources */,
+				52684AA62C33D9C00078794F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "dvda-author-lib";
+			productName = "dvda-author-lib";
+			productReference = 52684AA82C33D9C00078794F /* libdvda-author-lib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -311,6 +362,9 @@
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					526849F82C3298A20078794F = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					52684AA72C33D9C00078794F = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
@@ -329,6 +383,7 @@
 			projectRoot = "";
 			targets = (
 				526849F82C3298A20078794F /* dvda-author */,
+				52684AA72C33D9C00078794F /* dvda-author-lib */,
 			);
 		};
 /* End PBXProject section */
@@ -356,6 +411,28 @@
 				52684A492C329E5C0078794F /* audio.c in Sources */,
 				52684A442C329A3F0078794F /* libc_utils.c in Sources */,
 				52684A6D2C32A0C60078794F /* file_input_parsing.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52684AA52C33D9C00078794F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52684AB82C33DA210078794F /* checkParameters.c in Sources */,
+				52684AB72C33DA1F0078794F /* checkData.c in Sources */,
+				52684AAF2C33D9F50078794F /* atsi2.c in Sources */,
+				52684AB42C33DA0D0078794F /* samg2.c in Sources */,
+				52684AB62C33DA1A0078794F /* winport.c in Sources */,
+				52684AAD2C33D9EA0078794F /* amg2.c in Sources */,
+				52684AB12C33D9FA0078794F /* auxiliary.c in Sources */,
+				52684AB02C33D9F80078794F /* audio.c in Sources */,
+				52684AAC2C33D9E80078794F /* ats.c in Sources */,
+				52684AB52C33DA180078794F /* libc_utils.c in Sources */,
+				52684ABB2C33DA280078794F /* readHeader.c in Sources */,
+				52684ABC2C33DA2A0078794F /* repair.c in Sources */,
+				52684ABA2C33DA260078794F /* manager.c in Sources */,
+				52684AB22C33DA020078794F /* file_input_parsing.c in Sources */,
+				52684AB92C33DA240078794F /* fixwav_auxiliary.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +596,40 @@
 			};
 			name = Release;
 		};
+		52684AA92C33D9C00078794F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/ffmpeg-4.2.4\"";
+				OTHER_CFLAGS = (
+					"-DWITHOUT_sox",
+					"-DWITHOUT_lplex",
+					"-DWITHOUT_FLAC",
+					"-DHAVE_core_BUILD=1",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		52684AAA2C33D9C00078794F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/ffmpeg-4.2.4\"";
+				OTHER_CFLAGS = (
+					"-DWITHOUT_sox",
+					"-DWITHOUT_lplex",
+					"-DWITHOUT_FLAC",
+					"-DHAVE_core_BUILD=1",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -536,6 +647,15 @@
 			buildConfigurations = (
 				52684A012C3298A20078794F /* Debug */,
 				52684A022C3298A20078794F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52684AAB2C33D9C00078794F /* Build configuration list for PBXNativeTarget "dvda-author-lib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52684AA92C33D9C00078794F /* Debug */,
+				52684AAA2C33D9C00078794F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
