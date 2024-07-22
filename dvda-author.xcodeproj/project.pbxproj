@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5252D6F92C4E6CA80027F260 /* dvda_author_macApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5252D6F82C4E6CA80027F260 /* dvda_author_macApp.swift */; };
+		5252D6FB2C4E6CA80027F260 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5252D6FA2C4E6CA80027F260 /* ContentView.swift */; };
+		5252D6FD2C4E6CA90027F260 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5252D6FC2C4E6CA90027F260 /* Assets.xcassets */; };
+		5252D7002C4E6CA90027F260 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5252D6FF2C4E6CA90027F260 /* Preview Assets.xcassets */; };
+		5252D70B2C4E6CAA0027F260 /* dvda_author_macTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5252D70A2C4E6CAA0027F260 /* dvda_author_macTests.swift */; };
 		52684A332C32990E0078794F /* dvda-author.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A262C3298D80078794F /* dvda-author.c */; };
 		52684A442C329A3F0078794F /* libc_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A3F2C329A2D0078794F /* libc_utils.c */; };
 		52684A472C329D130078794F /* auxiliary.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A242C3298D80078794F /* auxiliary.c */; };
@@ -42,6 +47,16 @@
 		52684ABC2C33DA2A0078794F /* repair.c in Sources */ = {isa = PBXBuildFile; fileRef = 52684A5B2C32A0150078794F /* repair.c */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5252D7072C4E6CAA0027F260 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 526849F12C3298A20078794F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5252D6F52C4E6CA80027F260;
+			remoteInfo = "dvda-author-mac";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		526849F72C3298A20078794F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -55,6 +70,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5252D6F62C4E6CA80027F260 /* dvda-author-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dvda-author-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5252D6F82C4E6CA80027F260 /* dvda_author_macApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dvda_author_macApp.swift; sourceTree = "<group>"; };
+		5252D6FA2C4E6CA80027F260 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5252D6FC2C4E6CA90027F260 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5252D6FF2C4E6CA90027F260 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5252D7012C4E6CA90027F260 /* dvda_author_mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = dvda_author_mac.entitlements; sourceTree = "<group>"; };
+		5252D7062C4E6CAA0027F260 /* dvda-author-macTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "dvda-author-macTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5252D70A2C4E6CAA0027F260 /* dvda_author_macTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dvda_author_macTests.swift; sourceTree = "<group>"; };
 		526849F92C3298A20078794F /* dvda-author */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "dvda-author"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52684A032C3298D80078794F /* amg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = amg.h; sourceTree = "<group>"; };
 		52684A042C3298D80078794F /* asvs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = asvs.h; sourceTree = "<group>"; };
@@ -130,6 +153,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5252D6F32C4E6CA80027F260 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5252D7032C4E6CAA0027F260 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		526849F62C3298A20078794F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -147,12 +184,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5252D6F72C4E6CA80027F260 /* dvda-author-mac */ = {
+			isa = PBXGroup;
+			children = (
+				5252D6F82C4E6CA80027F260 /* dvda_author_macApp.swift */,
+				5252D6FA2C4E6CA80027F260 /* ContentView.swift */,
+				5252D6FC2C4E6CA90027F260 /* Assets.xcassets */,
+				5252D7012C4E6CA90027F260 /* dvda_author_mac.entitlements */,
+				5252D6FE2C4E6CA90027F260 /* Preview Content */,
+			);
+			path = "dvda-author-mac";
+			sourceTree = "<group>";
+		};
+		5252D6FE2C4E6CA90027F260 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5252D6FF2C4E6CA90027F260 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5252D7092C4E6CAA0027F260 /* dvda-author-macTests */ = {
+			isa = PBXGroup;
+			children = (
+				5252D70A2C4E6CAA0027F260 /* dvda_author_macTests.swift */,
+			);
+			path = "dvda-author-macTests";
+			sourceTree = "<group>";
+		};
 		526849F02C3298A20078794F = {
 			isa = PBXGroup;
 			children = (
 				52684A652C32A0150078794F /* libfixwav */,
 				52684A432C329A2D0078794F /* libutils */,
 				52684A322C3298D80078794F /* src */,
+				5252D6F72C4E6CA80027F260 /* dvda-author-mac */,
+				5252D7092C4E6CAA0027F260 /* dvda-author-macTests */,
 				526849FA2C3298A20078794F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -162,6 +229,8 @@
 			children = (
 				526849F92C3298A20078794F /* dvda-author */,
 				52684AA82C33D9C00078794F /* libdvda-author-lib.a */,
+				5252D6F62C4E6CA80027F260 /* dvda-author-mac.app */,
+				5252D7062C4E6CAA0027F260 /* dvda-author-macTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -318,6 +387,41 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		5252D6F52C4E6CA80027F260 /* dvda-author-mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5252D71E2C4E6CAA0027F260 /* Build configuration list for PBXNativeTarget "dvda-author-mac" */;
+			buildPhases = (
+				5252D6F22C4E6CA80027F260 /* Sources */,
+				5252D6F32C4E6CA80027F260 /* Frameworks */,
+				5252D6F42C4E6CA80027F260 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "dvda-author-mac";
+			productName = "dvda-author-mac";
+			productReference = 5252D6F62C4E6CA80027F260 /* dvda-author-mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5252D7052C4E6CAA0027F260 /* dvda-author-macTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5252D71F2C4E6CAA0027F260 /* Build configuration list for PBXNativeTarget "dvda-author-macTests" */;
+			buildPhases = (
+				5252D7022C4E6CAA0027F260 /* Sources */,
+				5252D7032C4E6CAA0027F260 /* Frameworks */,
+				5252D7042C4E6CAA0027F260 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5252D7082C4E6CAA0027F260 /* PBXTargetDependency */,
+			);
+			name = "dvda-author-macTests";
+			productName = "dvda-author-macTests";
+			productReference = 5252D7062C4E6CAA0027F260 /* dvda-author-macTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		526849F82C3298A20078794F /* dvda-author */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52684A002C3298A20078794F /* Build configuration list for PBXNativeTarget "dvda-author" */;
@@ -359,8 +463,16 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					5252D6F52C4E6CA80027F260 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					5252D7052C4E6CAA0027F260 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 5252D6F52C4E6CA80027F260;
+					};
 					526849F82C3298A20078794F = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -384,11 +496,49 @@
 			targets = (
 				526849F82C3298A20078794F /* dvda-author */,
 				52684AA72C33D9C00078794F /* dvda-author-lib */,
+				5252D6F52C4E6CA80027F260 /* dvda-author-mac */,
+				5252D7052C4E6CAA0027F260 /* dvda-author-macTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		5252D6F42C4E6CA80027F260 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5252D7002C4E6CA90027F260 /* Preview Assets.xcassets in Resources */,
+				5252D6FD2C4E6CA90027F260 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5252D7042C4E6CAA0027F260 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		5252D6F22C4E6CA80027F260 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5252D6FB2C4E6CA80027F260 /* ContentView.swift in Sources */,
+				5252D6F92C4E6CA80027F260 /* dvda_author_macApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5252D7022C4E6CAA0027F260 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5252D70B2C4E6CAA0027F260 /* dvda_author_macTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		526849F52C3298A20078794F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -438,7 +588,115 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5252D7082C4E6CAA0027F260 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5252D6F52C4E6CA80027F260 /* dvda-author-mac */;
+			targetProxy = 5252D7072C4E6CAA0027F260 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		5252D7182C4E6CAA0027F260 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "dvda-author-mac/dvda_author_mac.entitlements";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"dvda-author-mac/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "directory.current.dvda-author-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5252D7192C4E6CAA0027F260 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "dvda-author-mac/dvda_author_mac.entitlements";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"dvda-author-mac/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "directory.current.dvda-author-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5252D71A2C4E6CAA0027F260 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "directory.current.dvda-author-macTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dvda-author-mac.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/dvda-author-mac";
+			};
+			name = Debug;
+		};
+		5252D71B2C4E6CAA0027F260 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "directory.current.dvda-author-macTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dvda-author-mac.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/dvda-author-mac";
+			};
+			name = Release;
+		};
 		526849FE2C3298A20078794F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -633,6 +891,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5252D71E2C4E6CAA0027F260 /* Build configuration list for PBXNativeTarget "dvda-author-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5252D7182C4E6CAA0027F260 /* Debug */,
+				5252D7192C4E6CAA0027F260 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5252D71F2C4E6CAA0027F260 /* Build configuration list for PBXNativeTarget "dvda-author-macTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5252D71A2C4E6CAA0027F260 /* Debug */,
+				5252D71B2C4E6CAA0027F260 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		526849F42C3298A20078794F /* Build configuration list for PBXProject "dvda-author" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
