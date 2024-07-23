@@ -859,6 +859,7 @@
 					"-DWITHOUT_FLAC",
 					"-DHAVE_core_BUILD=1",
 					"-DLONG_OPTIONS=1",
+					"-DNO_ANSI_COLORS",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -880,6 +881,7 @@
 					"-DWITHOUT_FLAC",
 					"-DHAVE_core_BUILD=1",
 					"-DLONG_OPTIONS=1",
+					"-DNO_ANSI_COLORS",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -897,6 +899,7 @@
 					"-DWITHOUT_FLAC",
 					"-DHAVE_core_BUILD=1",
 					"-DNO_ANSI_COLORS=1",
+					"-DXCODE=1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -915,6 +918,7 @@
 					"-DWITHOUT_FLAC",
 					"-DHAVE_core_BUILD=1",
 					"-DNO_ANSI_COLORS=1",
+					"-DXCODE=1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

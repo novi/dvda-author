@@ -47,10 +47,15 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #include "auxiliary.h"
 
 
-
+#if !XCODE
 extern unsigned int startsector;
+#endif
 
+#if XCODE
+uint32_t create_samg(char *audiotsdir, command_t *command, sect *sectors, globalData *globals, unsigned int startsector)
+#else
 uint32_t create_samg(char *audiotsdir, command_t *command, sect *sectors, globalData *globals)
+#endif
 {
 
 #define files command->files

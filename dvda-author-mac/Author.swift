@@ -7,17 +7,29 @@
 
 import Foundation
 
+enum AuthorError: Error {
+    case unsupportedFileType(UInt8, URL)
+    case unsupportedBitDepthOrSampleRate(URL)
+}
+
 class Author {
     
     struct Group {
         let files: [URL]
     }
     
-    init() {
-        
+    let outputDir: URL
+    let audioTsDir: UnsafeMutablePointer<CChar>
+    let audioTsDirURL: URL
+    init(outputDir: URL) {
+        self.outputDir = outputDir
+        self.audioTsDirURL = outputDir.appending(path: "AUDIO_TS")
+        self.audioTsDir = self.audioTsDirURL.path(percentEncoded: false).copyCString()
     }
     
     func build(groups: [Group]) throws {
+        
+        try FileManager.default.createDirectory(at: audioTsDirURL, withIntermediateDirectories: true)
         
         let numOfGroups = UInt8(groups.count)
         precondition(groups.count <= 9)
@@ -29,12 +41,16 @@ class Author {
         
         
         // init variable
+        let img0 = UnsafeMutablePointer<pic>.allocate(capacity: 1)
+        img0.initialize(repeating: pic(), count: 1)
+        memset(img0, 0, MemoryLayout<pic>.size)
+        
         var globalData = globalData()
         var command = command_t()
         defer {
-            free_memory(&command, &globalData)
+//            free_memory(&command, &globalData)
         }
-        globalData.topmenu = 5 // No Menu
+        globalData.topmenu = Int8(NO_MENU)
         globalData.veryverbose = true
         globalData.debugging = true
         globalData.settings.workdir = tempDir.path(percentEncoded: false).copyCString()
@@ -52,6 +68,10 @@ class Author {
         globalData.settings.stillpicdir = tempDir.path(percentEncoded: false).copyCString()
         
         
+        let provider = UnsafeMutablePointer<CChar>.allocate(capacity: 30)
+        provider.initialize(repeating: 0, count: 30)
+        command.provider = provider
+        command.img = img0
         command.ngroups = numOfGroups
         var numOfTracks = UnsafeMutablePointer<UInt8>.allocate(capacity: 9)
         numOfTracks.initialize(repeating: 0, count: 9)
@@ -87,10 +107,84 @@ class Author {
 //            numOfTitlePics.deallocate()
         }
         
+        var totalSampleBytes: UInt64 = 0
+        var numFiles = Array<Int>(repeating: 0, count: Int(numOfGroups))
+        for i in 0..<Int(numOfGroups) {
+            numFiles[i] = Int(command.ntracks[i])
+            for j in 0..<numFiles[i] {
+                if command.files[i]![j].cga == 0 || command.files[i]![j].cga == 0xff {
+                    command.files[i]![j].cga = wav2cga_channels(&command.files[i]![j], &globalData)
+                }
+                command.files[i]![j].contin_track = calc_countin_track(j, numFiles[i])
+                
+                if command.files[i]![j].type == AFMT_MLP {
+                    throw AuthorError.unsupportedFileType(command.files[i]![j].type, groups[i].files[j])
+                } else {
+                    if ((command.files[i]![j].samplerate > 48000 && command.files[i]![j].bitspersample == 24) || command.files[i]![j].samplerate > 96000)
+                        && command.files[i]![j].channels >= 5 {
+                            throw AuthorError.unsupportedBitDepthOrSampleRate(groups[i].files[j])
+                    }
+                }
+                totalSampleBytes += command.files[i]![j].numbytes;
+            }
+        }
+        
+        
+        
+        
         let totalTrackCount = create_tracktables(&command, numOfGroups, &numOfTitles, numOfTitleTracks, numOfTitleLength, numOfTitlePics, &globalData)
-        precondition(expectedTotalTracks == totalTrackCount)
+//        precondition(expectedTotalTracks == totalTrackCount)
         
         print("total tracks \(totalTrackCount)")
+        
+        
+        var sectors = sect()
+        sectors.amg = UInt8(SIZE_AMG + (globalData.text ? 1 : 0) + (globalData.topmenu <= TS_VOB_TYPE ? 1 : 0))
+        sectors.samg = UInt8(SIZE_SAMG)
+        sectors.asvs = UInt8(((command.img.pointee.count > 0) || (command.img.pointee.stillvob != nil) || (command.img.pointee.active)) ? SIZE_ASVS : 0)
+        sectors.topvob = 0
+        sectors.stillvob = 0
+        memset(&sectors.atsi, 0, 9) // sizeof sectors.atsi
+        
+        var numOfAobFiles: Int32 = 0
+        var numOfAtsiFiles: Int32 = 0
+        let atsiSectors = UnsafeMutablePointer<UInt8>.allocate(capacity: 9)
+        atsiSectors.initialize(repeating: 0, count: 9)
+        defer {
+//            atsiSectors.deallocate()
+        }
+        for i in 0..<Int(numOfGroups) {
+            numOfAobFiles += create_ats(audioTsDir, Int32(i+1), command.files[i]!, Int32(numFiles[i]), &globalData)
+            numOfAtsiFiles += create_atsi(&command, audioTsDir, UInt8(i), &atsiSectors[i], numOfTitlePics[i], &globalData)
+        }
+        sectors.atsi = (atsiSectors[0], atsiSectors[1], atsiSectors[2], atsiSectors[3], atsiSectors[4], atsiSectors[5],
+                        atsiSectors[6], atsiSectors[7], atsiSectors[8])
+        
+        let numOfAsvFiles: Int32 = 0
+        var startsector = STARTSECTOR
+        startsector += 3 // AUDIO_TS.IFO + AUDIO_TS.BUP + SAMG
+        + ((command.img.pointee.tsvob != nil && sectors.topvob != 0) ? 1 : 0)   // AUDIO_TS.VOB
+        + numOfAsvFiles // AUDIO_SV.VOB + AUDIO_SV.IFO + AUDIO_SV.BUP
+        + numOfAobFiles + numOfAtsiFiles // num of ATS_XX_0.IFO + ATS_XX_0.BUP files
+        
+        let lastSector = create_samg(audioTsDir, &command, &sectors, &globalData, UInt32(startsector))
+        
+        print("last sector \(lastSector)")
+        
+        let numOfAmgFiles = create_amg(audioTsDir,
+                                       &command,
+                                       &sectors,
+                                       nil,
+                                       nil,
+                                       &numOfTitles,
+                                       numOfTitleTracks,
+                                       numOfTitleLength,
+                                       &globalData)
+        precondition(numOfAmgFiles > 0)
+        
+        print("num of amg files \(numOfAmgFiles)")
+        
+        
         
     }
     
@@ -121,3 +215,4 @@ extension String {
 
 typealias GivenChannels = (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)
 let globalGivenChannels: GivenChannels = (0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+

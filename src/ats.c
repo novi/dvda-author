@@ -1913,6 +1913,11 @@ int create_ats(char *audiotsdir,
 
   fpout = fopen(outfile, "wb+");
 
+  if (fpout == NULL) {
+    foutput(ERR "Could not open outfile %s\n", outfile);
+    EXIT_ON_RUNTIME_ERROR
+  }
+    
   if (audio_open(&files[i], globals) != 0)
     {
       foutput(ERR "Could not open %s\n", files[i].filename);
